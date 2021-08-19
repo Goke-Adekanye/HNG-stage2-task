@@ -1,6 +1,10 @@
 /* VARIABLES */
 :root {
+    --main-color: #084482;
     --blue-dark: #18293c;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur: blur(5px);
 }
 
 /* GLOBAL STYLES  */
@@ -22,7 +26,7 @@ body {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    background-image: url(../homepage-bg.svg);
+    background-image: url(../img/homepage-bg.svg);
     background-size: cover;
     /* background-color: #fafafa; */
     color: var(--blue-dark);
@@ -40,12 +44,28 @@ body {
 }
 
 section {
+    padding: 80px 0;
     min-height: calc(100vh - 70px);
-    background-color: #fff;
     border-radius: 1rem;
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border: 1px solid var(--white-alpha-40);
     animation: fadeIn 0.5s ease-in-out forwards;
 }
-
+.section-title {
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-title h2 {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: var(--blue-dark);
+  }
+  .section-title span {
+    color: var(--main-color);
+  }
 /* END OF GLOBAL STYLES  */
 
 /* HEADER  */
@@ -53,13 +73,15 @@ section {
     width: 100%;
     top: 0;
     left: 0;
+    margin-bottom: 1rem;
     padding: 5px 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-color: #f2f2f2;
+    /* border-color: #f2f2f2;
     border-style: solid;
-    border-width: .0625rem 0;
+    border-width: .0625rem 0; */
 }
 
 .header .nav-brand img {
@@ -112,5 +134,25 @@ section {
 .header .nav-toggler:hover span::after {
     width: 50%;
 }
-
 /* END OF HEADER  */
+
+/* ABOUT SECTION  */
+.about-container {
+    display: flex;
+    align-items: center;
+}
+.about-img {
+    width: 100%;
+    padding: 0 15px;
+}
+.about-img .img-box {
+    max-width: 380px;
+    margin: auto;
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    border-radius: 10px;
+}
+.about-img .img-box img {
+    width: 100%;
+}
+/* END OF ABOUT SECTION  */
