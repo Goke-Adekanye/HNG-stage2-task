@@ -342,5 +342,22 @@ button {
     font-weight: 400;
 }
 
+@media (min-width: 767px) {
+    .about-container {
+        display: flex;
+    }
 
+    .about-img {
+        width: 40%;
+    }
+
+    .about-text {
+        width: 60%;
+        margin-top: 0;
+    }
+
+    .outer-div.bg-no-mg {
+        margin-top: 0;
+    }
+}
 /* END OF ABOUT SECTION  */
