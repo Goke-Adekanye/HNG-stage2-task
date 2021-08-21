@@ -38,6 +38,7 @@ body {
 }
 
 .main {
+    
     max-width: 1200px;
     margin: auto;
     position: relative;
@@ -103,11 +104,110 @@ button {
     border: 1px solid transparent !important;
   }
   /* end of BUTTONS */
+
+  /* BACKGROUND SHAPES  */
+.bg-shapes {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: calc(100% - 30px);
+    max-width: 1200px;
+    position: fixed;
+    transform: translateX(-50%);
+    padding: 0;
+  
+  }
+  
+  .bg-shapes > div {
+    position: absolute;
+  }
+  
+  .bg-shapes .square-1 {
+    top: 20%;
+    left: -2%;
+    height: 60px;
+    width: 60px;
+    opacity: 0.3;
+    background-color: var(--blue-dark);
+    animation: spin 1s linear infinite;
+  }
+  
+  .bg-shapes .square-2 {
+    top: 50%;
+    left: 30%;
+    height: 80px;
+    width: 80px;
+    opacity: 0.4;
+    background-color: var(--blue-dark);
+    animation: bounceTop 5s ease-in-out infinite;
+  }
+  
+  .bg-shapes .circle-1 {
+    top: 40%;
+    right: -60px;
+    height: 120px;
+    width: 120px;
+    opacity: 0.6;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    animation: zoomInOut 8s linear infinite;
+  }
+  .bg-shapes .circle-2 {
+    top: 90%;
+    left: -30px;
+    height: 50px;
+    width: 80px;
+    opacity: 0.6;
+    background-color: #000000;
+  }
+  /* END OF BACKGROUND SHAPES  */  
+
+  /* ANIMATION KEYFRAMES  */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+  @keyframes bounceTop {
+    0%, 100% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+  }
+  @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  @keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+  }
+  /* END OF ANIMATION KEYFRAMES  */  
 /* END OF GLOBAL STYLES  */
 
 /* HEADER  */
 .header {
-    width: 100%;
     top: 0;
     left: 0;
     margin-bottom: 1rem;
@@ -116,6 +216,7 @@ button {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    background: #000;
     /* border-color: #f2f2f2;
     border-style: solid;
     border-width: .0625rem 0; */
@@ -142,7 +243,7 @@ button {
     height: 2px;
     width: 24px;
     position: relative;
-    background-color: var(--blue-dark);
+    background-color: #fff;
     transition: background-color 0.3s ease;
 }
 
@@ -153,7 +254,7 @@ button {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: var(--blue-dark);
+    background-color: #fff;
     transition: all 0.3s ease;
 }
 
@@ -171,6 +272,98 @@ button {
 .header .nav-toggler:hover span::after {
     width: 50%;
 }
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown {
+    position: relative;
+    font-weight: bold;
+    display: flex;
+    color: black;
+    padding: 1rem;
+  }
+  .dropdown.d-none {
+      display: none;
+  }
+  .dropdown img {
+      border-radius: 50%;
+  }
+  .dropdown .fa-caret-down {
+    margin-top: 5px;
+    margin-left: 3px;
+  }
+
+  .dropdown-content {
+    width: 0%;
+    min-width: 0px;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 3rem;
+    z-index: 1;
+    background: #fff;
+    margin: 0;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transition: min-width 0.3s ease;
+  }
+  .dropdown:hover .dropdown-content {
+    color: #000000;
+    min-width: 200px;
+    visibility: visible;
+  }
+  .dropdown:hover .dropdown-content a{
+    color: #000000 !important;
+  }
+
+  .dropdown:hover ul li {
+      opacity: 1;
+  }
+  .dropdown ul li {
+    opacity: 0;
+    padding: 0 10px;
+    margin-top: 0px !important;
+    transition: opacity 0.1s ease;
+  }
+  .dropdown ul li:hover {
+      background-color: whitesmoke;
+  }
+  .dropdown ul li div {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown ul li div h5 {
+      margin-left: 5px;
+  }
+
+  .dropdown ul li div .MuiSvgIcon-root{
+    font-size: 22px;
+  }
+
+  .dropdown ul li p {
+      margin: 0 !important;
+      margin: -15px 0 0 29px !important;
+      padding-bottom: 10px;
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--dark-grey);
+  }
+
+  .dropdown ul li hr {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-bottom: 1px solid whitesmoke !important;
+  }
+
 /* END OF HEADER  */
 
 /* ABOUT SECTION  */
