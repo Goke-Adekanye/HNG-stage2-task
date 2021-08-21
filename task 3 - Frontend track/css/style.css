@@ -5,6 +5,7 @@
     --white-alpha-40: rgba(255, 255, 255, 0.40);
     --white-alpha-25: rgba(255, 255, 255, 0.25);
     --backdrop-filter-blur: blur(5px);
+    --backdrop-filter-blurry: blur(20px);
 }
 
 /* GLOBAL STYLES  */
@@ -70,6 +71,10 @@ section {
 
   a {
       text-decoration: none;
+  }
+
+  ul {
+      list-style: none;
   }
 /* BUTTONS */
 button {
@@ -217,6 +222,8 @@ button {
     align-items: center;
     justify-content: space-between;
     background: #000;
+    position: sticky;
+    z-index: 1000;
     /* border-color: #f2f2f2;
     border-style: solid;
     border-width: .0625rem 0; */
@@ -283,21 +290,16 @@ button {
 }
 
 .dropdown {
+    display: flex;
+    align-items: center;
     position: relative;
     font-weight: bold;
-    display: flex;
     color: black;
-    padding: 1rem;
+    cursor: pointer;
   }
-  .dropdown.d-none {
-      display: none;
-  }
+
   .dropdown img {
       border-radius: 50%;
-  }
-  .dropdown .fa-caret-down {
-    margin-top: 5px;
-    margin-left: 3px;
   }
 
   .dropdown-content {
@@ -305,47 +307,51 @@ button {
     min-width: 0px;
     visibility: hidden;
     position: absolute;
-    right: 0;
-    top: 3rem;
+    right: -50px;
+    top: .5rem;
     z-index: 1;
-    background: #fff;
+    /* background: #fff; */
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blurry);
+    border: 1px solid var(--white-alpha-40);
     margin: 0;
-    margin-top: 1.5rem;
-    border-radius: 0.5rem;
+    margin-top: 1.4rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     transition: min-width 0.3s ease;
   }
   .dropdown:hover .dropdown-content {
-    color: #000000;
+    color: var(--main-color);
     min-width: 200px;
     visibility: visible;
   }
-  .dropdown:hover .dropdown-content a{
-    color: #000000 !important;
+  .dropdown:hover .dropdown-content{
+    color: var(--main-color) !important;
   }
 
   .dropdown:hover ul li {
       opacity: 1;
   }
   .dropdown ul li {
-    opacity: 0;
-    padding: 0 10px;
+    /* opacity: 0; */
+    padding: 10px 10px;
     margin-top: 0px !important;
     transition: opacity 0.1s ease;
   }
   .dropdown ul li:hover {
-      background-color: whitesmoke;
+      background-color: var(--white-alpha-40);
   }
   .dropdown ul li div {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
   }
   .dropdown ul li div h5 {
       margin-left: 5px;
   }
 
-  .dropdown ul li div .MuiSvgIcon-root{
-    font-size: 22px;
+  .dropdown ul li div img{
+    width: 20px;
+    object-fit: contain;
   }
 
   .dropdown ul li p {
@@ -354,14 +360,14 @@ button {
       padding-bottom: 10px;
       font-size: 11px;
       font-weight: 300;
-      color: var(--dark-grey);
+      color: var(--blue-dark);
   }
 
-  .dropdown ul li hr {
+  .dropdown ul hr {
       padding: 0;
       margin: 0;
       border: none;
-      border-bottom: 1px solid whitesmoke !important;
+      border-bottom: 1px solid var(--white-alpha-40) !important;
   }
 
 /* END OF HEADER  */
