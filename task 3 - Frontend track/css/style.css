@@ -222,7 +222,7 @@ button {
     align-items: center;
     justify-content: space-between;
     background: #000;
-    position: sticky;
+    /* position: sticky; */
     z-index: 1000;
     /* border-color: #f2f2f2;
     border-style: solid;
@@ -296,6 +296,7 @@ button {
     font-weight: bold;
     color: black;
     cursor: pointer;
+    margin: 0;
   }
 
   .dropdown img {
@@ -303,14 +304,12 @@ button {
   }
 
   .dropdown-content {
-    width: 0%;
-    min-width: 0px;
+    min-width: 0;
     visibility: hidden;
     position: absolute;
     right: -50px;
     top: .5rem;
     z-index: 1;
-    /* background: #fff; */
     background-color: var(--white-alpha-25);
     backdrop-filter: var(--backdrop-filter-blurry);
     border: 1px solid var(--white-alpha-40);
