@@ -327,15 +327,15 @@ button {
     color: var(--main-color) !important;
   }
 
-  .dropdown:hover ul li {
-      opacity: 1;
-  }
   .dropdown ul li {
-    /* opacity: 0; */
+    opacity: 0;
     padding: 10px 10px;
     margin-top: 0px !important;
     transition: opacity 0.1s ease;
   }
+  .dropdown:hover ul li {
+    opacity: 1;
+}
   .dropdown ul li:hover {
       background-color: var(--white-alpha-40);
   }
@@ -346,6 +346,7 @@ button {
   }
   .dropdown ul li div h5 {
       margin-left: 5px;
+      color: var(--main-color);
   }
 
   .dropdown ul li div img{
