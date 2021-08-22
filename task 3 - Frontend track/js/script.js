@@ -1,3 +1,17 @@
+// PAGE LOADER
+// on-page-load
+window.addEventListener("load", () => {
+  document.querySelector(".main").classList.remove("hidden");
+  document.querySelector(".about-section").classList.add("active");
+
+  // page-loader
+  document.querySelector(".page-loader").classList.add("fade-out");
+  setTimeout(() => {
+    document.querySelector(".page-loader").style.display = "none";
+  }, 1000);
+});
+// END OF PAGE LOADER
+
 // ABOUT TABS
 const tabContainer = document.querySelector(".about-tabs");
 const aboutSection = document.querySelector(".about-section");
